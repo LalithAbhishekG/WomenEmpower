@@ -8,7 +8,7 @@ export default function Involve() {
     <div className="w-full">
       {/* Donate Section */}
       <div
-        className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat px-6 md:px-16 py-16"
+        className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat px-6 md:px-16 py-16 bg-fixed"
         style={{ backgroundImage: `url(${donatebg})` }}
       >
         <section className="flex flex-col md:flex-row items-center justify-center gap-12 w-full">
@@ -86,7 +86,7 @@ export default function Involve() {
 
       {/* Volunteer Section */}
       <div
-        className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat px-6 md:px-16 py-16"
+        className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat px-6 md:px-16 py-16 bg-fixed"
         style={{ backgroundImage: `url(${volunteerbg})` }}
       >
         <section className="flex flex-col md:flex-row-reverse items-center justify-center gap-12 w-full">
