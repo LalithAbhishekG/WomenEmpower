@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,10 +29,9 @@ function Header() {
   }, []);
 
   const navItems = [
-    { label: "Our Impact", link: "#impact" },
-    { label: "Get Involved", link: "#involved" },
-    { label: "Contact", link: "#contact" },
-    { label: "News & Events", link: "#news" },
+    { label: "Our Impact", link: "/our-impact" },
+    { label: "Get Involved", link: "/get-involved" },
+    { label: "News & Events", link: "/news-events" },
   ];
 
   return (
@@ -41,14 +41,15 @@ function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <h1
+        {/* Logo → Home */}
+        <Link
+          to="/"
           className={`text-2xl font-bold transition-colors ${
             scrolled ? "text-pink-950" : "text-white"
           }`}
         >
           Logo
-        </h1>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-8 items-center">
@@ -67,33 +68,27 @@ function Header() {
 
             {dropdownOpen && (
               <div className="absolute top-full mt-2 bg-white rounded-lg shadow-lg py-2 w-48">
-                <a
-                  href="#mission"
+                <Link
+                  to="/about"
                   className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                 >
                   Our Mission
-                </a>
-                <a
-                  href="#vision"
-                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                >
+                </Link>
+                <span className="block px-4 py-2 text-gray-500 cursor-not-allowed">
                   Our Vision
-                </a>
-                <a
-                  href="#team"
-                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                >
+                </span>
+                <span className="block px-4 py-2 text-gray-500 cursor-not-allowed">
                   Meet our Team
-                </a>
+                </span>
               </div>
             )}
           </div>
 
           {/* Other Nav Items */}
           {navItems.map((item, i) => (
-            <a
+            <Link
               key={i}
-              href={item.link}
+              to={item.link}
               className={`font-medium transition-colors ${
                 scrolled
                   ? "text-pink-950 hover:text-pink-700"
@@ -101,13 +96,13 @@ function Header() {
               }`}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? (
@@ -135,24 +130,20 @@ function Header() {
             </button>
             {dropdownOpen && (
               <div className="flex flex-col pl-4">
-                <a href="#mission" className="py-2 hover:opacity-80">
+                <Link to="/about" className="py-2 hover:opacity-80">
                   Our Mission
-                </a>
-                <a href="#vision" className="py-2 hover:opacity-80">
-                  Our Vision
-                </a>
-                <a href="#team" className="py-2 hover:opacity-80">
-                  Meet our Team
-                </a>
+                </Link>
+                <span className="py-2 text-gray-400">Our Vision</span>
+                <span className="py-2 text-gray-400">Meet our Team</span>
               </div>
             )}
           </div>
 
           {/* Other Nav Items */}
           {navItems.map((item, i) => (
-            <a key={i} href={item.link} className="py-2 font-medium hover:opacity-80">
+            <Link key={i} to={item.link} className="py-2 font-medium hover:opacity-80">
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
       )}
