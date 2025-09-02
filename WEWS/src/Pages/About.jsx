@@ -1,7 +1,7 @@
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import OurMission from '../Components/OurMission';
-
+import OurVision from '../Components/OurVision';
 
 export default function About() {
   return (
@@ -9,7 +9,7 @@ export default function About() {
     <Header />
    
     <OurMission />
-   
+    <OurVision />
     <Footer />
     </>
   );

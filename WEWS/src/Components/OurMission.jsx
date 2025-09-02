@@ -10,7 +10,7 @@ function OurMission() {
         className="bg-cover bg-center bg-no-repeat bg-fixed h-screen flex md:justify-end justify-center"
       >
         <motion.div
-          className="m-20 flex flex-col items-center md:items-end space-y-10"
+          className="m-10 flex flex-col items-center md:items-end space-y-10 md:mr-40 "
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
